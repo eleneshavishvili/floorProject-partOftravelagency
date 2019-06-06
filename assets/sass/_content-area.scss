@@ -1,0 +1,324 @@
+#content-area {
+  margin: 0 auto;
+  overflow: auto;
+  max-width: 1200px;
+  // width: 100%;
+  // background: rgb(212, 208, 208);
+  min-height: 100%;
+  display: flex;
+}
+
+#filter {
+  background: $gray;
+  flex-basis: 30%;
+  max-width: 300px;
+  .inside {
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  select {
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1b1b1b;
+    display: block;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  .filters {
+    .title {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: $darkgray;
+    }
+    input[type="text"] {
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 10px;
+      width: 30%;
+      display: inline-block;
+      margin-right: 2.5%;
+      margin-bottom: 1rem;
+    }
+    &.extras {
+      label {
+        display: block;
+        width: 70%;
+        padding: 10px 0;
+
+        input[type="checkbox"] {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+#listings {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-basis: 70%;
+  padding: 15px;
+  background: $offwhite;
+
+  .search-part {
+    display: flex;
+    justify-content: space-between;
+
+    .search-area {
+      input[type="text"] {
+        background: transparent;
+        outline: none;
+        font-size: 2rem;
+        border: none;
+        border-bottom: 2px solid $darkgray;
+        margin-bottom: 20px;
+      }
+    }
+
+    .sortby-area {
+      margin-bottom: 20px;
+      // display: flx;
+
+      .results {
+        color: gray;
+        font-size: 1.2rem;
+        // align-self: flex-start;
+        // display: inline-block;
+      }
+
+      .sort-options {
+        flex-basis: 30%;
+
+        select {
+          font-size: 0.9rem;
+          font-weight: 300;
+          border: 1px solid gray;
+          background: transparent;
+          padding: 6px 10px;
+          display: inline-block;
+          margin-right: 15px;
+        }
+
+        .view {
+          display: inline-block;
+          .fa {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.listings-results {
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .listing {
+    margin-bottom: 10px;
+    background: #ffffff;
+    flex-basis: 30%;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 9px 54px -4px rgba(224, 224, 224, 1);
+  }
+
+  .listing-img {
+    position: relative;
+    color: white;
+    padding: 15px;
+    background: url(https://assets.architecturaldesigns.com/plan_assets/324992268/large/23703JD_01_1553616680.jpg?1553616681)
+      no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.4s easy-in-out;
+    &:hover {
+      .details {
+        opacity: 1;
+      }
+      .address {
+        opacity: 0;
+      }
+    }
+    .address {
+      position: absolute;
+      bottom: 20px;
+      opacity: 1;
+      transition: all 0.4s easy-in-out;
+    }
+    .details {
+      transition: all 0.4s easy-in-out;
+      opacity: 0;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+
+      background: -moz-linear-gradient(
+        top,
+        rgba(203, 96, 179, 1) 0%,
+        rgba(193, 70, 160, 0.616) 20%,
+        rgba(219, 54, 164, 0.81) 94%
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(203, 96, 179, 1) 0%,
+        rgba(193, 70, 161, 0.66) 20%,
+        rgba(211, 81, 168, 0.575) 94%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgb(172, 94, 155) 0%,
+        rgba(158, 75, 136, 0.66) 20%,
+        rgba(99, 33, 77, 0.548) 94%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#cfdb36a4',GradientType=0 );
+
+      .user-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: inline-block;
+        background: #ffffff;
+
+        background: url(https://assets.architecturaldesigns.com/plan_assets/324992268/large/23703JD_01_1553616680.jpg?1553616681)
+          no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .user-details {
+        vertical-align: top;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        .user-name {
+          font-weight: 300;
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+
+          color: rgba(255, 255, 255, 1);
+          margin-top: 5px;
+        }
+
+        .post-date {
+          font-size: 0.9rem;
+
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      .listing-ditails {
+        margin: 20px 0px;
+        .fa {
+          display: inline-block;
+          font-size: 20px;
+          margin-right: 15px;
+        }
+        span {
+          font-size: 0.8rem;
+          font-weight: 300px;
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+          top: 3px;
+        }
+        .floor-space {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .bottom-info {
+    padding: 5px;
+    background: #ffffff;
+    .price {
+      font-size: 1.1rem;
+      display: block;
+      padding: 10px;
+      color: red;
+      text-align: center;
+    }
+
+    .location {
+      font-size: 1.3rem;
+      display: block;
+      padding: 10px;
+      color: gray;
+      text-align: center;
+    }
+  }
+}
+
+.view-btn {
+  background: black;
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 150px;
+  transition: background 0.4s ease-in-out;
+  &:hover {
+    background: $pink;
+    cursor: pointer;
+  }
+}
+
+#pagination {
+  .pages {
+    display: flex;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 9px 54px -4px rgba(224, 224, 224, 1);
+    li {
+      padding: 20px;
+
+      &.active,
+      &:hover {
+        background: $pink;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// .col-3 {
+//   width: 25%;
+//   display: inline-block;
+//   vertical-align: top;
+// }
+
+// .col-9 {
+//   width: 75%;
+//   display: inline-block;
+//   vertical-align: top;
+// }
